@@ -1,12 +1,17 @@
 package com.tprojects.tplearningenglish;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.DrawableRes;
+import androidx.core.content.ContextCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -39,10 +44,27 @@ public class MainActivity extends AppCompatActivity {
         });
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
+
+        /* TODO
+        View header = binding.navView.getHeaderView(0);
+        ImageView profilePicture= header.findViewById(R.id.nav_header_img);
+        profilePicture.setImageDrawable(ContextCompat.getDrawable(binding.getRoot().getContext(),R.drawable.ic_menu_gallery));
+        TextView title = header.findViewById(R.id.nav_header_title);
+        TextView subTitle = header.findViewById(R.id.nav_sub_title);
+        title.setText("Tolga KARTAL");
+        subTitle.setText("tolgakartal@hotmail.com.tr");
+         */
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home)
+                R.id.nav_home,
+                R.id.nav_words,
+                R.id.nav_speaking,
+                R.id.nav_reading,
+                R.id.nav_settings,
+                R.id.nav_help,
+                R.id.nav_about)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);

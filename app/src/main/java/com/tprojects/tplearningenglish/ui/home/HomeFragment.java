@@ -1,5 +1,6 @@
 package com.tprojects.tplearningenglish.ui.home;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +11,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.tprojects.tplearningenglish.data.dto.Words;
+import com.tprojects.tplearningenglish.data.helpers.WordsHelper;
+import com.tprojects.tplearningenglish.data.tables.WordTable;
 import com.tprojects.tplearningenglish.databinding.FragmentHomeBinding;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment {
 
@@ -23,6 +30,14 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        WordsHelper wordsHelper = new WordsHelper(requireContext());
+        wordsHelper.insertWord("book","kitap");
+        Cursor result = wordsHelper.getWords();
+        List<Words> wt = new ArrayList<>();
+        while (result.moveToNext()){
+            wt.add(new Words(null,result.getString(0),result.getString(1)));
+        }
 
         final TextView textView = binding.textHome;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);

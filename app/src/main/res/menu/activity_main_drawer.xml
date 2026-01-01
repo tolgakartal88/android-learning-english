@@ -3,10 +3,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/menu_group_general">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_menu_home_page"
             android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_words"
+            android:icon="@drawable/ic_menu_words"
+            android:title="@string/menu_words" />
+        <item
+            android:id="@+id/nav_speaking"
+            android:icon="@drawable/ic_menu_speak"
+            android:title="@string/menu_speaking" />
+        <item
+            android:id="@+id/nav_reading"
+            android:icon="@drawable/ic_menu_read"
+            android:title="@string/menu_reading" />
+    </group>
+
+    <group
+        android:checkableBehavior="none"
+        android:id="@+id/menu_group_preferences">
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_menu_setting"
+            android:title="@string/menu_settings" />
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_menu_help"
+            android:title="@string/menu_help" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_menu_about"
+            android:title="@string/menu_about" />
     </group>
 </menu>

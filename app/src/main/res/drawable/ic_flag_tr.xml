@@ -1,0 +1,44 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="16dp"
+    android:viewportWidth="300"
+    android:viewportHeight="200">
+
+    <!-- Kırmızı zemin -->
+    <path
+        android:fillColor="#E30A17"
+        android:pathData="M0,0H300V200H0Z"/>
+
+    <!-- Beyaz hilal (dış) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="
+            M120,100
+            m-50,0
+            a50,50 0 1,0 100,0
+            a50,50 0 1,0 -100,0"/>
+
+    <!-- Hilalin iç boşluğu -->
+    <path
+        android:fillColor="#E30A17"
+        android:pathData="
+            M135,100
+            m-40,0
+            a40,40 0 1,0 80,0
+            a40,40 0 1,0 -80,0"/>
+
+    <!-- ⭐ YILDIZ (DİKEY MERKEZ = Y 100) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="
+            M180,80
+            L186,94
+            L202,94
+            L189,104
+            L194,120
+            L180,110
+            L166,120
+            L171,104
+            L158,94
+            L174,94Z"/>
+</vector>

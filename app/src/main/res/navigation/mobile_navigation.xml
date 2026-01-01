@@ -11,4 +11,40 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
+    <fragment
+        android:id="@+id/nav_words"
+        android:name="com.tprojects.tplearningenglish.ui.words.WordsFragment"
+        android:label="@string/menu_words"
+        tools:layout="@layout/fragment_words" />
+
+    <fragment
+        android:id="@+id/nav_speaking"
+        android:name="com.tprojects.tplearningenglish.ui.speaking.SpeakingFragment"
+        android:label="@string/menu_speaking"
+        tools:layout="@layout/fragment_speaking" />
+
+    <fragment
+        android:id="@+id/nav_reading"
+        android:name="com.tprojects.tplearningenglish.ui.reading.ReadingFragment"
+        android:label="@string/menu_reading"
+        tools:layout="@layout/fragment_reading" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.tprojects.tplearningenglish.ui.settings.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/nav_help"
+        android:name="com.tprojects.tplearningenglish.ui.help.HelpFragment"
+        android:label="@string/menu_help"
+        tools:layout="@layout/fragment_help" />
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.tprojects.tplearningenglish.ui.about.AboutFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/fragment_about" />
+
 </navigation>

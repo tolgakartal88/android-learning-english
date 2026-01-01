@@ -1,27 +1,59 @@
 package com.tprojects.tplearningenglish.data.dto;
 
-import androidx.annotation.Nullable;
+import java.util.Objects;
 
 public class Words {
-    public Integer _id;
-    public String _word;
-    public String _mean;
 
-    public Words(@Nullable Integer id, String word, String mean){
-        _id = id;
-        _word = word;
-        _mean = mean;
+    private int id;
+    private String word;
+    private String mean;
+
+    public Words(){
+
     }
 
-    public Integer get_id() {
-        return _id;
+    public Words(int id, String word, String mean) {
+        this.id = id;
+        this.word = word;
+        this.mean = mean;
     }
 
-    public String get_word() {
-        return _word;
+    public int getId() {
+        return id;
     }
 
-    public String get_mean() {
-        return _mean;
+    public String getWord() {
+        return word;
+    }
+
+    public String getMean() {
+        return mean;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Words)) return false;
+        Words words = (Words) o;
+        return id == words.id &&
+                Objects.equals(word, words.word) &&
+                Objects.equals(mean, words.mean);
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setWord(String word) {
+        this.word = word;
+    }
+
+    public void setMean(String mean) {
+        this.mean = mean;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, word, mean);
     }
 }

@@ -32,12 +32,8 @@ public class HomeFragment extends Fragment {
         View root = binding.getRoot();
 
         WordsHelper wordsHelper = new WordsHelper(requireContext());
-        wordsHelper.insertWord("book","kitap");
-        Cursor result = wordsHelper.getWords();
-        List<Words> wt = new ArrayList<>();
-        while (result.moveToNext()){
-            wt.add(new Words(null,result.getString(0),result.getString(1)));
-        }
+        //wordsHelper.insertWord("book","kitap");
+        List<Words> result = wordsHelper.getWords();
 
         final TextView textView = binding.textHome;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);

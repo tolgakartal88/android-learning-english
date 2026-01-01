@@ -178,9 +178,9 @@ public class WordsFragment extends Fragment {
         }
 
         new AlertDialog.Builder(requireContext())
-                .setTitle(isEdit ? "Edit Word" : "Add Word")
+                .setTitle(isEdit ? "Kelime Güncelle" : "Kelime Ekle")
                 .setView(dialogView)
-                .setPositiveButton("Save", (dialog, which) -> {
+                .setPositiveButton("Kaydet", (dialog, which) -> {
                     String word = edtWord.getText().toString().trim();
                     String mean = edtMean.getText().toString().trim();
 
@@ -192,7 +192,7 @@ public class WordsFragment extends Fragment {
                         viewModel.insertWord(word, mean);
                     }
                 })
-                .setNegativeButton("Cancel", null)
+                .setNegativeButton("İptal", null)
                 .show();
     }
 
@@ -260,7 +260,6 @@ public class WordsFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        binding = null;
         adapter.releaseTts();
     }
 
